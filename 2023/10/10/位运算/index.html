@@ -28,6 +28,9 @@
   
   <!-- Custom Files headBegin end-->
     <link rel="shortcut icon" type='image/x-icon' href="/images/logo.jpg">
+  <link rel="stylesheet" href="https://unpkg.com/katex@0.16.4/dist/katex.min.css">
+  <script defer src="https://unpkg.com/katex@0.16.4/dist/katex.min.js"></script>
+  <script defer src="https://unpkg.com/katex@0.16.4/dist/contrib/auto-render.min.js"></script>
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -42,7 +45,7 @@
 <meta property="og:title" content="位运算">
 <meta property="og:url" content="https://github.com/2023/10/10/%E4%BD%8D%E8%BF%90%E7%AE%97/index.html">
 <meta property="og:site_name" content="March 7th">
-<meta property="og:description" content="一. 集合&amp;表示按位与,|表示按位或,⊕表示按位异或,~表示按位取反,对称差指仅在一个集合中的元素.    术语 集合 位运算 举例 举例    交集 A ∩ B a&amp;b {0,2,3}∩ {0,1,2}&#x3D;{0,1,3} 1101&amp;0111&#x3D; 0101   并集 A∪B a|b {0,2,3}∪ {0,1,2}&#x3D; {0,1,2,3} 1101|">
+<meta property="og:description" content="一. 集合 &amp;表示按位与,|表示按位或,⊕表示按位异或,~表示按位取反,对称差指仅在一个集合中的元素.    术语 集合 位运算 举例 举例     交集 A ∩ B a&amp;b {0,2,3}∩ {0,1,2}&#x3D;{0,1,3} 1101&amp;0111&#x3D; 0101   并集 A∪B a|b {0,2,3}∪ {0,1,2}&#x3D; {0,1,2,3} 1101| 0111&#x3D; 1111">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-10-10T14:24:53.000Z">
@@ -1965,7 +1968,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"/images/logo.jpg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"/images/bg.jpg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1697176609301),
+    lastupdate: new Date(1697185926133),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2379,55 +2382,62 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h3 id="一-集合"><a href="#一-集合" class="headerlink" title="一. 集合"></a>一. 集合</h3><p>&amp;表示按位与,|表示按位或,⊕表示按位异或,~表示按位取反,对称差指仅在一个集合中的元素.</p>
+    <h3 id="一-集合"><a class="markdownIt-Anchor" href="#一-集合"></a> 一. 集合</h3>
+<p>&amp;表示按位与,|表示按位或,⊕表示按位异或,~表示按位取反,对称差指仅在一个集合中的元素.</p>
 <table>
 <thead>
 <tr>
-<th align="center">术语</th>
-<th align="center">集合</th>
-<th align="center">位运算</th>
-<th align="center">举例</th>
-<th align="center">举例</th>
+<th style="text-align:center">术语</th>
+<th style="text-align:center">集合</th>
+<th style="text-align:center">位运算</th>
+<th style="text-align:center">举例</th>
+<th style="text-align:center">举例</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">交集</td>
-<td align="center">A ∩ B</td>
-<td align="center">a&amp;b</td>
-<td align="center">{0,2,3}<br>∩ {0,1,2}<br>&#x3D;{0,1,3}</td>
-<td align="center">1101<br>&amp;0111<br>&#x3D; 0101</td>
+<tbody>
+<tr>
+<td style="text-align:center">交集</td>
+<td style="text-align:center">A ∩ B</td>
+<td style="text-align:center">a&amp;b</td>
+<td style="text-align:center">{0,2,3}<br>∩ {0,1,2}<br>={0,1,3}</td>
+<td style="text-align:center">1101<br>&amp;0111<br>= 0101</td>
 </tr>
 <tr>
-<td align="center">并集</td>
-<td align="center">A∪B</td>
-<td align="center">a|b</td>
-<td align="center">{0,2,3}<br>∪ {0,1,2}<br>&#x3D; {0,1,2,3}</td>
-<td align="center">1101<br>| 0111<br>&#x3D; 1111</td>
+<td style="text-align:center">并集</td>
+<td style="text-align:center">A∪B</td>
+<td style="text-align:center">a|b</td>
+<td style="text-align:center">{0,2,3}<br>∪ {0,1,2}<br>= {0,1,2,3}</td>
+<td style="text-align:center">1101<br>| 0111<br>= 1111</td>
 </tr>
 <tr>
-<td align="center">对称差</td>
-<td align="center">AΔB</td>
-<td align="center">a⊕b</td>
-<td align="center">{0,2,3}<br>Δ {0,1,2}<br>&#x3D; {1,3}</td>
-<td align="center">1101<br> ⊕ 0111<br>&#x3D; 1010</td>
+<td style="text-align:center">对称差</td>
+<td style="text-align:center">AΔB</td>
+<td style="text-align:center">a⊕b</td>
+<td style="text-align:center">{0,2,3}<br>Δ {0,1,2}<br>= {1,3}</td>
+<td style="text-align:center">1101<br> ⊕ 0111<br>= 1010</td>
 </tr>
 <tr>
-<td align="center">差</td>
-<td align="center">A\B</td>
-<td align="center">a&amp;~b</td>
-<td align="center">{0,2,3}<br>\ {1,2}<br>&#x3D; {0,3}</td>
-<td align="center">1101<br> &amp; 1001<br>&#x3D; 1001</td>
+<td style="text-align:center">差</td>
+<td style="text-align:center">A\B</td>
+<td style="text-align:center">a&amp;~b</td>
+<td style="text-align:center">{0,2,3}<br>\ {1,2}<br>= {0,3}</td>
+<td style="text-align:center">1101<br> &amp; 1001<br>= 1001</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
-<p>注1: 按位取反的例子中,仅列出最低的4个比特位取反后的结果, 即0110取反后是1001.<br>注2: 包含于的两种位运算写法是等价的, 在编程时只需判断其中任意一种.<br>注3: 编程时, 请注意运算符的优先级, 例如<code>==</code>在某些语言中优先级更高.</p>
+<p>注1: 按位取反的例子中,仅列出最低的4个比特位取反后的结果, 即0110取反后是1001.<br />
+注2: 包含于的两种位运算写法是等价的, 在编程时只需判断其中任意一种.<br />
+注3: 编程时, 请注意运算符的优先级, 例如<code>==</code>在某些语言中优先级更高.</p>
 </blockquote>
-<h3 id="二-集合与元素"><a href="#二-集合与元素" class="headerlink" title="二. 集合与元素"></a>二. 集合与元素</h3><p>通常会用到移位运算.</p>
+<h3 id="二-集合与元素"><a class="markdownIt-Anchor" href="#二-集合与元素"></a> 二. 集合与元素</h3>
+<p>通常会用到移位运算.</p>
 <p>其中 &lt;&lt; 表示左移, &gt;&gt; 表示右移</p>
 <blockquote>
 <p>注: 左移i位相当于乘2 ^ i, 右移i位相当于除2 ^ i.</p>
 </blockquote>
-<h3 id="三-遍历集合"><a href="#三-遍历集合" class="headerlink" title="三. 遍历集合"></a>三. 遍历集合</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<h3 id="三-遍历集合"><a class="markdownIt-Anchor" href="#三-遍历集合"></a> 三. 遍历集合</h3>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>s <span class="token operator">>></span> i<span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// i在s中</span>
         <span class="token comment">// 处理i的逻辑</span>
     <span class="token punctuation">&#125;</span>
@@ -2435,8 +2445,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>s <span class="token operator">>></span> i<span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token comment"># i在s中</span>
         <span class="token comment"># 处理i的逻辑</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="四-枚举集合"><a href="#四-枚举集合" class="headerlink" title="四. 枚举集合"></a>四. 枚举集合</h3><p>设元素范围从0到n - 1, 从空集枚举到全集<em>U</em>:</p>
+<h3 id="四-枚举集合"><a class="markdownIt-Anchor" href="#四-枚举集合"></a> 四. 枚举集合</h3>
+<p>设元素范围从0到n - 1, 从空集枚举到全集<em>U</em>:</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> s <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> s <span class="token operator">&lt;</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;&lt;</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span> s<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token comment">// 处理s的逻辑</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -2553,8 +2563,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2023/10/10/hello-leetcode-md/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>hello-leetcode.md</p>
-          <p class='content'>LeetCode全球极客挚爱的高质量技术成长平台，想要学习和提升专业能力从这里开始，充足技术干货等你来啃，轻松拿下 Dream Offer！
-print("LeetCode is awesome...</p>
+          <p class='content'> LeetCode
+全球极客挚爱的高质量技术成长平台，想要学习和提升专业能力从这里开始，充足技术干货等你来啃，轻松拿下 Dream Offer！
+print("LeetCode is aweso...</p>
         </a>
       
       
@@ -2621,7 +2632,7 @@ print("LeetCode is awesome...</p>
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E9%9B%86%E5%90%88"><span class="toc-text">一. 集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E9%9B%86%E5%90%88%E4%B8%8E%E5%85%83%E7%B4%A0"><span class="toc-text">二. 集合与元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-%E9%81%8D%E5%8E%86%E9%9B%86%E5%90%88"><span class="toc-text">三. 遍历集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B-%E6%9E%9A%E4%B8%BE%E9%9B%86%E5%90%88"><span class="toc-text">四. 枚举集合</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E9%9B%86%E5%90%88"><span class="toc-text"> 一. 集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E9%9B%86%E5%90%88%E4%B8%8E%E5%85%83%E7%B4%A0"><span class="toc-text"> 二. 集合与元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-%E9%81%8D%E5%8E%86%E9%9B%86%E5%90%88"><span class="toc-text"> 三. 遍历集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B-%E6%9E%9A%E4%B8%BE%E9%9B%86%E5%90%88"><span class="toc-text"> 四. 枚举集合</span></a></li></ol>
   </div>
 </section>
 

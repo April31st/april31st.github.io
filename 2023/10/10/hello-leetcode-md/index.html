@@ -28,6 +28,9 @@
   
   <!-- Custom Files headBegin end-->
     <link rel="shortcut icon" type='image/x-icon' href="/images/logo.jpg">
+  <link rel="stylesheet" href="https://unpkg.com/katex@0.16.4/dist/katex.min.css">
+  <script defer src="https://unpkg.com/katex@0.16.4/dist/katex.min.js"></script>
+  <script defer src="https://unpkg.com/katex@0.16.4/dist/contrib/auto-render.min.js"></script>
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -42,7 +45,7 @@
 <meta property="og:title" content="hello-leetcode.md">
 <meta property="og:url" content="https://github.com/2023/10/10/hello-leetcode-md/index.html">
 <meta property="og:site_name" content="March 7th">
-<meta property="og:description" content="LeetCode全球极客挚爱的高质量技术成长平台，想要学习和提升专业能力从这里开始，充足技术干货等你来啃，轻松拿下 Dream Offer！ print(&quot;LeetCode is awesome!&quot;) print(&quot;LeetCode is awesome!&quot;)  print(&quot;LeetCode is awesome!&quot;) print(&quot;LeetCode is awesome!&quot;)">
+<meta property="og:description" content="LeetCode 全球极客挚爱的高质量技术成长平台，想要学习和提升专业能力从这里开始，充足技术干货等你来啃，轻松拿下 Dream Offer！ print(&quot;LeetCode is awesome!&quot;) print(&quot;LeetCode is awesome!&quot;) print(&quot;LeetCode is awesome!&quot;) print(&quot;LeetCode is awesome!&quot;)">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-10-10T14:24:53.000Z">
@@ -1965,7 +1968,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"/images/logo.jpg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"/images/bg.jpg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1697176609301),
+    lastupdate: new Date(1697185926133),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2365,10 +2368,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h1><p>全球极客挚爱的高质量技术成长平台，想要学习和提升专业能力从这里开始，充足技术干货等你来啃，轻松拿下 Dream Offer！</p>
+    <h1 id="leetcode"><a class="markdownIt-Anchor" href="#leetcode"></a> LeetCode</h1>
+<p>全球极客挚爱的高质量技术成长平台，想要学习和提升专业能力从这里开始，充足技术干货等你来啃，轻松拿下 Dream Offer！</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"LeetCode is awesome!"</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"LeetCode is awesome!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"LeetCode is awesome!"</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"LeetCode is awesome!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
   </div>
@@ -2482,15 +2485,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2023/10/13/%E6%8E%92%E5%BA%8F/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>排序</p>
-          <p class='content'>排序简介定义排序算法 (Sorting algorithm) 是一种将一组特定的数据按某种顺序进行排列的算法.
-性质稳定性稳定性是指相等的元素经过排序之后相对顺序是否发生了改变.
-基数排序, 计...</p>
+          <p class='content'> 排序简介
+ 定义
+排序算法 (Sorting algorithm) 是一种将一组特定的数据按某种顺序进行排列的算法.
+ 性质
+ 稳定性
+稳定性是指相等的元素经过排序之后相对顺序是否发生了改变....</p>
         </a>
       
       
         <a class='next' href='/2023/10/10/%E4%BD%8D%E8%BF%90%E7%AE%97/'>
           <p class='title'>位运算<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>一. 集合&amp;表示按位与,|表示按位或,⊕表示按位异或,~表示按位取反,对称差指仅在一个集合中的元素.
+          <p class='content'> 一. 集合
+&amp;表示按位与,|表示按位或,⊕表示按位异或,~表示按位取反,对称差指仅在一个集合中的元素.
 
 
 
@@ -2502,10 +2509,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
+
 交集
 A ∩ B
 a&amp;b
-{0,...</p>
+...</p>
         </a>
       
     </div>
